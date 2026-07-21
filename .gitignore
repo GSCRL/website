@@ -1,0 +1,7 @@
+# Generated source maps
+assets/css/*.css.map
+
+# macOS / Windows metadata
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
