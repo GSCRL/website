@@ -3216,6 +3216,18 @@ input, select, textarea {
 
 /* Champions */
 
+	/* GSCRL: the champions block sits inside the season thank-you rather than
+	   its own section, so give it separation from the paragraph above and a
+	   heading with enough weight to read as the lead item on the page. */
+	#champions {
+		margin-top: 3em;
+	}
+
+		#champions > h3 {
+			font-size: 1.35em;
+			margin-bottom: 0.75em;
+		}
+
 	/* GSCRL: the champions table has four columns, wider than a phone can show.
 	   .table-wrapper scrolls, but with no visible affordance the Third column
 	   just looks missing, so stack each row into a labelled block instead. */

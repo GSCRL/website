@@ -9,6 +9,16 @@
 
 #champions {
 
+	// The champions block now sits inside the season thank-you rather than in
+	// its own section, so give it separation from the paragraph above and a
+	// heading with enough weight to read as the lead item on the page.
+	margin-top: 3em;
+
+	> h3 {
+		font-size: 1.35em;
+		margin-bottom: 0.75em;
+	}
+
 	@include breakpoint('<=small') {
 
 		.table-wrapper {
