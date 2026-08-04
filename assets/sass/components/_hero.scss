@@ -1,0 +1,67 @@
+///
+/// GSCRL homepage hero
+///
+
+// The intro used to be a fullscreen band of flat #222 carrying eleven words,
+// so the first thing a visitor saw said nothing about whether the league was
+// active. It now carries a photo of the field and the next event's date.
+
+#intro {
+	position: relative;
+	background-image: url("../../images/robot-event-16x9-1920.webp");
+	background-size: cover;
+	background-position: center 42%;
+	background-repeat: no-repeat;
+
+	// Directional scrim: heavy behind the left-aligned copy, light on the
+	// right so the arena stays visible rather than being flattened out.
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(
+			to right,
+			rgba(26, 19, 44, 0.94) 0%,
+			rgba(26, 19, 44, 0.86) 40%,
+			rgba(26, 19, 44, 0.58) 100%
+		);
+	}
+
+	> .inner {
+		position: relative;
+		z-index: 1;
+	}
+
+	// The next-event line is the whole point of the hero; give it more weight
+	// than the tagline above it without making it a heading.
+	.next-up {
+		font-size: 1.15em;
+		margin-bottom: 1.75em;
+
+		strong {
+			color: _palette(fg-bold);
+			border-bottom: solid 2px _palette(accent3);
+			padding-bottom: 0.15em;
+		}
+	}
+
+	@include breakpoint('<=small') {
+		background-position: center 45%;
+
+		&:before {
+			background-image: linear-gradient(
+				to bottom,
+				rgba(26, 19, 44, 0.9) 0%,
+				rgba(26, 19, 44, 0.94) 100%
+			);
+		}
+
+		.next-up {
+			font-size: 1.05em;
+		}
+	}
+}
