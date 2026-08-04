@@ -50,7 +50,6 @@
 	@import 'components/table';
 	@import 'components/champions';
 	@import 'components/wrapper';
-	@import 'components/hero';
 
 // Layout.
 
@@ -59,3 +58,8 @@
 	@import 'layout/footer';
 	@import 'layout/sidebar';
 	@import 'layout/intro';
+
+// Overrides.
+
+	@import 'components/hero';
+	@import 'components/bands';

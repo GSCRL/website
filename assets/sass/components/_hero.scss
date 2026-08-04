@@ -9,6 +9,10 @@
 #intro {
 	position: relative;
 	background-image: url("../../images/robot-event-16x9-1920.webp");
+
+	// The template's layout/_intro sets a fixed attachment and 100% 100% sizing
+	// for intro.svg; both have to be overridden explicitly.
+	background-attachment: scroll;
 	background-size: cover;
 	background-position: center 42%;
 	background-repeat: no-repeat;
@@ -25,9 +29,9 @@
 		height: 100%;
 		background-image: linear-gradient(
 			to right,
-			rgba(26, 19, 44, 0.94) 0%,
-			rgba(26, 19, 44, 0.86) 40%,
-			rgba(26, 19, 44, 0.58) 100%
+			rgba(22, 16, 38, 0.95) 0%,
+			rgba(22, 16, 38, 0.90) 55%,
+			rgba(22, 16, 38, 0.60) 100%
 		);
 	}
 
@@ -62,6 +66,13 @@
 
 		.next-up {
 			font-size: 1.05em;
+
+			// The date wraps to two or three lines on a phone, which breaks the
+			// underline into disconnected segments. Bold alone carries it.
+			strong {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
 		}
 	}
 }

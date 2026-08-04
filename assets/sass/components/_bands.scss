@@ -1,0 +1,16 @@
+///
+/// GSCRL section band alternation
+///
+
+// The page runs a long stack of full-width sections. The template's stock
+// style2 / style2-alt pair sits only ~18 points apart per channel, which is
+// too close to read as separate bands when the sections are this tall — the
+// whole middle of the page looks like one continuous blue.
+//
+// Deepen the alternate so consecutive sections are clearly distinct while
+// staying in the same indigo family. Everything alternates style2 /
+// style2-alt down the page, bookended by the dark intro and contact bands.
+
+.wrapper.style2-alt {
+	background-color: #363878;
+}
