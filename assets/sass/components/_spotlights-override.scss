@@ -1,0 +1,19 @@
+///
+/// GSCRL event card overrides
+///
+
+// Make spotlight event cards a consistent height on desktop so the
+// background images crop the same way across all cards, regardless of
+// how many links are in each card's content.
+
+@include breakpoint('>medium') {
+	.spotlights {
+		> section {
+			min-height: 26em;
+
+			> .content {
+				justify-content: center;
+			}
+		}
+	}
+}

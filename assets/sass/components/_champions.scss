@@ -1,0 +1,74 @@
+///
+/// GSCRL season champions table
+///
+
+// The champions table has four columns, which is wider than a phone can
+// show. .table-wrapper scrolls horizontally, but with no visible affordance
+// the Third column simply looks missing. On small screens, stack each row
+// into a labelled block instead.
+
+#champions {
+
+	// The champions block now sits inside the season thank-you rather than in
+	// its own section, so give it separation from the paragraph above and a
+	// heading with enough weight to read as the lead item on the page.
+	margin-top: 3em;
+
+	> h3 {
+		font-size: 1.35em;
+		margin-bottom: 0.75em;
+	}
+
+	@include breakpoint('<=small') {
+
+		.table-wrapper {
+			overflow-x: visible;
+		}
+
+		table, tbody, tr, td {
+			display: block;
+			width: 100%;
+		}
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			// Reset the base table's row borders outright; stacked rows want a
+			// single divider between blocks and none trailing the last one.
+			border: 0;
+			border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+			padding: 0.75em 0;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			// The zebra striping reads as noise once rows are stacked.
+			&:nth-child(2n + 1) {
+				background-color: transparent;
+			}
+		}
+
+		td {
+			border: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 1em;
+			padding: 0.25em 0;
+			text-align: right;
+
+			&:before {
+				content: attr(data-label);
+				flex: 0 0 auto;
+				font-weight: _font(weight-bold);
+				text-align: left;
+				opacity: 0.7;
+			}
+		}
+
+	}
+
+}
