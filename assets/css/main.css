@@ -3874,18 +3874,6 @@ input, select, textarea {
 					max-width: 100%;
 				}
 
-		body.is-preload #sidebar > .inner {
-			opacity: 0;
-		}
-
-		body.is-preload #sidebar nav ul li {
-			-moz-transform: translateY(2em);
-			-webkit-transform: translateY(2em);
-			-ms-transform: translateY(2em);
-			transform: translateY(2em);
-			opacity: 0;
-		}
-
 		@media screen and (max-width: 1280px) {
 
 			#sidebar {
