@@ -115,21 +115,6 @@
 			}
 		}
 
-		body.is-preload & {
-			> .inner {
-				opacity: 0;
-			}
-
-			nav {
-				ul {
-					li {
-						@include vendor('transform', 'translateY(2em)');
-						opacity: 0;
-					}
-				}
-			}
-		}
-
 		@include breakpoint('<=large') {
 			height: _size(sidebar-height);
 			left: 0;

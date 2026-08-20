@@ -3874,18 +3874,6 @@ input, select, textarea {
 					max-width: 100%;
 				}
 
-		body.is-preload #sidebar > .inner {
-			opacity: 0;
-		}
-
-		body.is-preload #sidebar nav ul li {
-			-moz-transform: translateY(2em);
-			-webkit-transform: translateY(2em);
-			-ms-transform: translateY(2em);
-			transform: translateY(2em);
-			opacity: 0;
-		}
-
 		@media screen and (max-width: 1280px) {
 
 			#sidebar {
@@ -3993,3 +3981,80 @@ input, select, textarea {
 			}
 
 		}
+
+/* Hero */
+
+	/* GSCRL: the intro used to be a fullscreen band of flat #222 carrying
+	   eleven words, so the first thing a visitor saw said nothing about
+	   whether the league was active. It now carries a photo of the field
+	   and the next event's date. */
+	#intro {
+		position: relative;
+		background-image: url("../../images/robot-event-16x9-1920.webp");
+		background-attachment: scroll;
+		background-size: cover;
+		background-position: center 42%;
+		background-repeat: no-repeat;
+	}
+
+		/* Directional scrim: heavy behind the left-aligned copy, light on the
+		   right so the arena stays visible rather than being flattened out. */
+		#intro:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(to right, rgba(22, 16, 38, 0.95) 0%, rgba(22, 16, 38, 0.90) 55%, rgba(22, 16, 38, 0.60) 100%);
+		}
+
+		#intro > .inner {
+			position: relative;
+			z-index: 1;
+		}
+
+		#intro .next-up {
+			font-size: 1.15em;
+			margin-bottom: 1.75em;
+		}
+
+			#intro .next-up strong {
+				color: #ffffff;
+				border-bottom: solid 2px #b74e91;
+				padding-bottom: 0.15em;
+			}
+
+	@media screen and (max-width: 736px) {
+
+		#intro {
+			background-position: center 45%;
+		}
+
+		#intro:before {
+			background-image: linear-gradient(to bottom, rgba(26, 19, 44, 0.9) 0%, rgba(26, 19, 44, 0.94) 100%);
+		}
+
+		#intro .next-up {
+			font-size: 1.05em;
+		}
+
+			/* The date wraps to two or three lines on a phone, which breaks the
+			   underline into disconnected segments. Bold alone carries it. */
+			#intro .next-up strong {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+
+	}
+
+/* Bands */
+
+	/* GSCRL: the stock style2 / style2-alt pair sits only ~18 points apart per
+	   channel, too close to read as separate bands when sections are this tall.
+	   Deepen the alternate so consecutive sections are clearly distinct while
+	   staying in the same indigo family. */
+	.wrapper.style2-alt {
+		background-color: #363878;
+	}
