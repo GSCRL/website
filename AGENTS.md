@@ -23,10 +23,8 @@
 ## Repository Layout
 
 ```text
-/                      Root HTML pages
-├── index.html         Home + event listings + sponsors + contact (long scrolling page)
-├── support.html       Volunteering / hosting / donation info
-├── rules.html         Redirect to Google Docs rules
+/                      Site root
+├── index.html         One-page site with events, sponsors, support, about, and contact
 ├── CNAME              gscrl.org
 ├── assets/
 │   ├── css/           Compiled CSS (commit after SCSS changes)
@@ -138,13 +136,12 @@ Pattern:
 - Always provide a descriptive `alt` attribute.
 - Keep the 3-column grid by using `col-4`.
 
-### Adding a New Top-Level Page
+### Adding a New Homepage Section
 
-1. Copy `support.html` as a starting scaffold.
-2. Update `<title>` and `header > a.title`.
-3. Add navigation links in relevant pages (`index.html` sidebar and other page headers).
-4. Use `#main > section.wrapper > .inner` as the main content container.
-5. Include the full script block at the bottom of the body.
+1. Add a uniquely identified `<section>` inside `#wrapper` in `index.html`.
+2. Use the existing `section.wrapper > .inner` pattern and an appropriate `style*` class.
+3. Add an anchor link to the `index.html` sidebar when the section should be directly navigable.
+4. Keep the existing script block at the bottom of the body unchanged.
 
 ## Safe-Edit Rules
 
@@ -169,8 +166,6 @@ Apply these when editing any page:
 ## Known Technical Debt
 
 - `index.html` has an inline `<style>` block and mixed indentation.
-- `support.html` has commented-out footer HTML.
-- `rules.html` is a JavaScript redirect to a Google Docs document; this is intentional but fragile.
 - Some outbound links use `http://` (e.g., sponsor `fubarlabs.org` link).
 - No meta description, Open Graph tags, or JSON-LD structured data for events.
 - No `robots.txt` or `sitemap.xml`.
@@ -321,10 +316,8 @@ Agents working here should have access to:
 6. **Web accessibility (a11y)** — alt text, form labels, keyboard navigation, color contrast.
 7. **SEO / structured data** — meta tags, Open Graph, Event Schema.org markup.
 8. **Responsive design / HTML5 UP conventions** — the custom grid and breakpoint system.
-9. **Cloudflare platform** (if migrating or adding dynamic features) — Pages hosting, Turnstile for the contact form, Email Routing for `njcombatrobots@gmail.com`.
+9. **Cloudflare platform** (if migrating or adding dynamic features) — Pages hosting, Turnstile for the contact form, Email Routing for `president@gscrl.org`.
 
 ## Contact / Data Conventions
 
-- Primary contact email shown on site: `njcombatrobots@gmail.com`.
-- Fiscal sponsor / donation route: FUBAR Labs PayPal hosted button (`hosted_button_id=9MH4DD9RCYEFC`).
-- Rule document is an external Google Doc; update `rules.html` redirect only if the canonical doc URL changes.
+- Primary contact email shown on site: `president@gscrl.org`.

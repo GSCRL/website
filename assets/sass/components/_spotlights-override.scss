@@ -2,17 +2,143 @@
 /// GSCRL event card overrides
 ///
 
-// Make spotlight event cards a consistent height on desktop so the
-// background images crop the same way across all cards, regardless of
-// how many links are in each card's content.
+// Compact event recap cards. These rules are scoped to .event-grid so the
+// template's default spotlight treatment remains available elsewhere.
 
-@include breakpoint('>medium') {
-	.spotlights {
+.spotlights.event-grid {
+	display: grid;
+	gap: 1.25em;
+	grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
+	padding: 0 4em 4em;
+
+	> section {
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		background-color: rgba(255, 255, 255, 0.045);
+		border: solid 1px rgba(255, 255, 255, 0.12);
+		border-radius: 0.65em;
+		box-shadow: 0 0.75em 2em rgba(0, 0, 0, 0.14);
+		min-height: 0;
+		overflow: hidden;
+
+		> .image {
+			border-radius: 0;
+			height: 10em;
+			min-height: 0;
+			width: 100%;
+		}
+
+		> .content {
+			@include padding(1.5em, 1.5em);
+			@include vendor('flex', '1');
+			@include vendor('justify-content', 'flex-start');
+			width: 100%;
+
+			> .inner {
+				width: 100%;
+			}
+		}
+
+		h2 {
+			font-size: 1.15em;
+			line-height: 1.35;
+			margin-bottom: 0.6em;
+		}
+
+		h3 {
+			font-size: 0.75em;
+			line-height: 1.45;
+			margin-bottom: 0.5em;
+		}
+
+		p {
+			font-size: 0.9em;
+			margin-bottom: 0.9em;
+		}
+
+		hr {
+			margin: 1em 0;
+		}
+
+		ul.actions,
+		ul.actions.event-brackets {
+			@include vendor('flex-wrap', 'wrap');
+			gap: 0.55em;
+			margin: 0 0 0.75em;
+
+			li {
+				padding: 0;
+			}
+		}
+
+		.event-icon-link {
+			@include vendor('align-items', 'center');
+			@include vendor('display', 'inline-flex');
+			@include vendor('justify-content', 'center');
+			background-color: rgba(255, 255, 255, 0.06);
+			border: solid 1px rgba(255, 255, 255, 0.25);
+			border-radius: 50%;
+			color: _palette(fg-bold);
+			height: 2.65em;
+			position: relative;
+			width: 2.65em;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.14);
+				border-color: rgba(255, 255, 255, 0.55);
+				color: _palette(fg-bold) !important;
+			}
+
+			&:before {
+				font-size: 0.9em;
+				margin: 0;
+			}
+
+			.event-icon-day {
+				@include vendor('align-items', 'center');
+				@include vendor('display', 'flex');
+				@include vendor('justify-content', 'center');
+				background-color: _palette(accent3);
+				border-radius: 50%;
+				color: _palette(fg-bold);
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 0.62em;
+				font-weight: bold;
+				height: 1.45em;
+				line-height: 1;
+				position: absolute;
+				right: -0.35em;
+				top: -0.35em;
+				width: 1.45em;
+			}
+		}
+
+		.button.fit {
+			font-size: 0.55em;
+			height: 3.25em;
+			line-height: 3.25em;
+			padding: 0 1.25em;
+			width: auto;
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+		padding: 0 2em 3em;
+	}
+
+	@include breakpoint('<=small') {
+		grid-template-columns: 1fr;
+		padding: 0 1.25em 2.5em;
+
 		> section {
-			min-height: 26em;
+			> .image {
+				height: 11em;
+				min-height: 0;
+			}
 
 			> .content {
-				justify-content: center;
+				@include padding(1.35em, 1.25em);
 			}
 		}
 	}
