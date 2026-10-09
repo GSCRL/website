@@ -5,6 +5,17 @@
 ///
 
 /* Header */
+	.legal-name-bar {
+		background-color: #000000;
+		color: #ffffff;
+		font-size: 0.7em;
+		font-weight: _font(weight-bold);
+		letter-spacing: _font(kerning-alt);
+		line-height: 1.2;
+		padding: 0.55em 1.5em;
+		text-align: center;
+		text-transform: uppercase;
+	}
 
 	#header {
 		@include vendor('display', 'flex');

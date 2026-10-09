@@ -7,6 +7,18 @@
 /* Footer */
 
 	#footer {
+		.legal-footer {
+			font-weight: _font(weight);
+			letter-spacing: normal;
+			text-transform: none;
+
+			.legal-footer-contact {
+				display: block;
+				font-size: 0.8em;
+				margin-top: 0.35em;
+			}
+		}
+
 		#sidebar + #wrapper + & {
 			margin-left: _size(sidebar-width);
 

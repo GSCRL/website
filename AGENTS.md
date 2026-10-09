@@ -8,7 +8,6 @@
 - **Domain:** `gscrl.org` (see `CNAME` file in repo root).
 - **Theme base:** HTML5 UP "Hyperspace" template.
   - License comment blocks must remain in any file that still carries them.
-  - Do not remove template reference files (`generic.html`, `elements.html`) unless explicitly asked.
 - **Audience:** Combat-robotics competitors, volunteers, sponsors, and spectators in New Jersey.
 
 ## Tech Stack
@@ -17,7 +16,7 @@
 - **Styling:** SCSS source in `assets/sass/`, compiled to `assets/css/`.
 - **Interactivity:** jQuery 3.x plus small HTML5 UP plugins (`scrollex`, `scrolly`, `browser`, `breakpoints`, `util`).
 - **Icons:** Font Awesome 5 Free (webfonts and CSS checked into `assets/webfonts/` / `assets/css/`).
-- **Images:** Stock/placement photos in `images/`; sponsor logos in `images/sponsors/`; event photos in `images/event_sites/`.
+- **Images:** The shared event image is in `images/`; sponsor logos are in `images/sponsors/`.
 - **Build tooling:** None currently checked in. SCSS is compiled manually.
 - **Hosting:** GitHub Pages from the `GSCRL/website` repository, serving the `gscrl.org` apex domain and `www.gscrl.org` via the `CNAME` file.
 
@@ -26,12 +25,8 @@
 ```text
 /                      Root HTML pages
 ├── index.html         Home + event listings + sponsors + contact (long scrolling page)
-├── event_info.html    Event registration and rules overview
 ├── support.html       Volunteering / hosting / donation info
-├── start.html         "Get Started" beginner page (mostly stub)
 ├── rules.html         Redirect to Google Docs rules
-├── generic.html       HTML5 UP generic page template (reference)
-├── elements.html      HTML5 UP component showcase (reference)
 ├── CNAME              gscrl.org
 ├── assets/
 │   ├── css/           Compiled CSS (commit after SCSS changes)
@@ -40,9 +35,8 @@
 │   ├── webfonts/      Font Awesome webfonts
 │   └── img/           Site logo / SVG
 └── images/
-    ├── event_sites/   Event card images
     ├── sponsors/      Sponsor logos
-    └── pic*.jpg       Stock/placement photos
+    └── robot-event-16x9-1920.webp  Shared event image
 ```
 
 ## Build / Compile Workflow
@@ -105,7 +99,7 @@ Events are listed inside `#events > section.spotlights` in `index.html`. Follow 
 
 ```html
 <section>
-  <a href="EVENT_REGISTRATION_URL" class="image"><img class="listimg" src="images/event_sites/coming_soon.jpg" /></a>
+  <a href="EVENT_REGISTRATION_URL" class="image"><img class="listimg" src="images/robot-event-16x9-1920.webp" /></a>
   <div class="content">
     <div class="inner">
       <h2>Event Name</h2>
@@ -125,8 +119,8 @@ Events are listed inside `#events > section.spotlights` in `index.html`. Follow 
 ```
 
 Notes:
-- Use `images/event_sites/coming_soon.jpg` when no custom image exists.
-- Upload event photos to `images/event_sites/` and update the `src`.
+- Use `images/robot-event-16x9-1920.webp` when no custom image exists.
+- Create `images/event_sites/` when adding custom event photos, then update the `src`.
 - Prefer high-resolution landscape images; the theme sets them as `background-image`.
 - Hide past events by wrapping them in HTML comments rather than deleting them — this preserves history.
 
@@ -146,7 +140,7 @@ Pattern:
 
 ### Adding a New Top-Level Page
 
-1. Copy `generic.html` as a starting scaffold.
+1. Copy `support.html` as a starting scaffold.
 2. Update `<title>` and `header > a.title`.
 3. Add navigation links in relevant pages (`index.html` sidebar and other page headers).
 4. Use `#main > section.wrapper > .inner` as the main content container.
@@ -156,7 +150,6 @@ Pattern:
 
 - **Do not edit generated `assets/css/*.css` directly** unless fixing an urgent typo while no Sass compiler is available. If you do, document it and plan to backport to SCSS.
 - **Keep existing license comments** in template-derived files.
-- **Do not delete `generic.html` or `elements.html`** without user approval; they act as living style references.
 - **Do not change `CNAME`** unless the domain is actually migrating.
 - **Preserve page `<script>` load order** in HTML files: jQuery → plugins → `util.js` → `main.js`.
 - **Do not add inline `<style>` blocks** in new HTML. Put styles in `assets/sass/` partials. Existing inline styles in `index.html` are tech debt and should be refactored when touched.
@@ -176,8 +169,7 @@ Apply these when editing any page:
 ## Known Technical Debt
 
 - `index.html` has an inline `<style>` block and mixed indentation.
-- `event_info.html` still contains HTML5 UP template placeholder content under "Lists", "Table", "Buttons", "Form", and "Image" sections.
-- `support.html` and `start.html` have commented-out footer HTML.
+- `support.html` has commented-out footer HTML.
 - `rules.html` is a JavaScript redirect to a Google Docs document; this is intentional but fragile.
 - Some outbound links use `http://` (e.g., sponsor `fubarlabs.org` link).
 - No meta description, Open Graph tags, or JSON-LD structured data for events.

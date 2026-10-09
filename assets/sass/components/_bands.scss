@@ -14,3 +14,41 @@
 .wrapper.style2-alt {
 	background-color: #363878;
 }
+
+#about {
+	> .inner {
+		padding-bottom: 3.5em;
+		padding-top: 3.5em;
+		width: 68em;
+	}
+
+	.about-grid {
+		display: grid;
+		gap: 3em;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+
+	.about-purpose {
+		columns: 2;
+		column-gap: 3em;
+
+		li {
+			break-inside: avoid;
+			margin-bottom: 0.75em;
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.about-purpose {
+			columns: 1;
+		}
+	}
+}

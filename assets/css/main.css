@@ -3451,6 +3451,18 @@ input, select, textarea {
 
 /* Header */
 
+	.legal-name-bar {
+		background-color: #000000;
+		color: #ffffff;
+		font-size: 0.7em;
+		font-weight: bold;
+		letter-spacing: 0.25em;
+		line-height: 1.2;
+		padding: 0.55em 1.5em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
 	#header {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3576,6 +3588,17 @@ input, select, textarea {
 	}
 
 /* Footer */
+
+	#footer .legal-footer {
+		font-weight: normal;
+		letter-spacing: normal;
+		text-transform: none;
+	}
+		#footer .legal-footer .legal-footer-contact {
+			display: block;
+			font-size: 0.8em;
+			margin-top: 0.35em;
+		}
 
 	#sidebar + #wrapper + #footer {
 		margin-left: 18em;
@@ -4057,4 +4080,42 @@ input, select, textarea {
 	   staying in the same indigo family. */
 	.wrapper.style2-alt {
 		background-color: #363878;
+	}
+
+	#about > .inner {
+		padding-bottom: 3.5em;
+		padding-top: 3.5em;
+		width: 68em;
+	}
+
+	#about .about-grid {
+		display: grid;
+		gap: 3em;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+		#about .about-grid h3 {
+			margin-top: 0;
+		}
+
+	#about .about-purpose {
+		columns: 2;
+		column-gap: 3em;
+	}
+
+		#about .about-purpose li {
+			break-inside: avoid;
+			margin-bottom: 0.75em;
+		}
+
+	@media screen and (max-width: 980px) {
+
+		#about .about-grid {
+			grid-template-columns: 1fr;
+		}
+
+		#about .about-purpose {
+			columns: 1;
+		}
+
 	}

@@ -112,7 +112,7 @@ You can copy and paste these directly into opencode or openchamber. Replace the 
 
 ### Add a new event
 
-> "Add a new event to the home page. The event is called [Event Name], happening on [Date] at [Location]. Link to the registration page: [URL]. Link to brackets: [URL]. Use the image at images/event_sites/coming_soon.jpg if we don't have a custom photo yet."
+> "Add a new event to the home page. The event is called [Event Name], happening on [Date] at [Location]. Link to the registration page: [URL]. Link to brackets: [URL]. Use images/robot-event-16x9-1920.webp if we don't have a custom photo yet."
 
 ### Add a sponsor
 

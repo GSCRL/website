@@ -123,9 +123,8 @@ git checkout -b feature/update-sponsors-2025-2026
 Common files:
 
 - `index.html` — home page, events, sponsors, contact form
-- `event_info.html` — event registration and rules overview
 - `support.html` — volunteering / hosting / donation info
-- `start.html` — "Get Started" beginner page
+- `rules.html` — redirect to the current rules document
 - `assets/sass/**/*.scss` — styles (source of truth)
 - `images/` — photos and logos
 
